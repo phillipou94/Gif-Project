@@ -1,3 +1,97 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@font-face {
+  font-family: DIN;
+  src: 
+    url(DIN.ttf)
+ }
+
+$special-grey: rgba(71, 101, 117, 0.75);
+$special-white: rgba(255, 255, 255, 0.50);
+
+*{
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+  	-webkit-box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Lucida Grande", sans-serif;
+    background: white;
+}
+
+.header {
+    position: absolute;
+    top: 0px;
+    background: $special-grey;
+    width:100%;
+	height:100%;
+
+}
+.header-content {
+	background-size:100% 100%;
+    color:white;
+    max-width: 100%;
+    width:100%;
+    margin-top: 20%;
+    margin-left: auto;
+    margin-right: auto;
+	h1 {
+		color:white;
+		text-align:center;
+        font-family: DIN;
+        font-size:40px;
+        width: 450px;
+        margin-left:auto;
+        margin-right:auto;
+        font-weight:600;
+	}
+    h2 {
+        margin-left:auto;
+        margin-right:auto;
+        text-align:center;
+        font-size:16px;
+        font-weight: 100;
+        padding-top:0px;
+        width: 600px;
+    }
+
+
+}
+
+.button {
+    display: inline-block;
+    padding: 1em;
+    margin-top:20px;
+    background-color: transparent;
+    text-decoration: none;
+    text-align:center;
+    color: $special-white;
+    border:$special-white;
+    border-style: solid;
+    border-width: 1px;
+    width:250px;
+    margin-left: 40%;
+}
+
+.grow {
+  display: inline-block;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  text-decoration: none;
+}
+.grow:hover, .grow:focus, .grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  color: white;
+  text-decoration: none;
+}

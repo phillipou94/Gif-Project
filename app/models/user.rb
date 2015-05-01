@@ -1,4 +1,4 @@
 class User < ActiveRecord::Base
-	has_many :images
+	has_many :gifs
 	has_many :channels
 end
