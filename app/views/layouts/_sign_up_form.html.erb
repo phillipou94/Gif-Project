@@ -1,0 +1,24 @@
+  <div id= "sign_up_form">
+  	<div class = "signup">
+
+  	<div class = "signin">
+
+      <%= form_for(:session,url:login_path) do |f| %> <!-- built-in form creation function -->
+	      <%= f.text_field :email, class: 'form-control', :placeholder => "Email" %>
+
+	      <%= f.password_field :password, class: 'form-control', :placeholder => "Password" %>
+
+	      <%= f.submit "Sign In", class: "form-button grow" %>
+      <% end %>
+    </div>
+
+      <%= form_for(:user,url:signup_path) do |f| %> <!-- built-in form creation function -->
+	      <%= f.text_field :email, class: 'form-control', :placeholder => "Email" %>
+	      <%= f.text_field :name, class: 'form-control', :placeholder => "Name" %>
+	      <%= f.password_field :password, class: 'form-control', :placeholder => "Password" %>
+	      <%= f.password_field :password_confirmation, class: 'form-control', :placeholder => "Confirm Password" %>
+	      <%= f.submit "Sign Up", class: "form-button grow" %>
+      <% end %>
+    </div>
+
+  </div>

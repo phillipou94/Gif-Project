@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+
+
+	</head>
+	<body>
+		<div class = "header">
+			<%= render "layouts/header" %>
+		</div>
+		<div id="leftCol">
+			<div class = "channel-form-container">
+				
+				<%= form_for(:channel,url:create_channel_path) do |f| %>
+				  <%= f.submit "+",:class => 'plus-button' %>
+				  <%= f.text_field :name, class: 'channel-textfield', :placeholder => "Create Channel" %>
+				<% end %>
+			</div>
+			<% current_user.channels.each do |channel| %>
+				<button class = "channel-card"> <%=channel.name.upcase %> </button>
+			<% end %>
+
+		</div> 
+        <div id="content"> 
+       
+             
+    	</div>
+		
+	</body>
+</html>

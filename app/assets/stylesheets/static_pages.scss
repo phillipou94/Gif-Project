@@ -8,8 +8,10 @@
     url(DIN.ttf)
  }
 
-$special-grey: rgba(71, 101, 117, 0.75);
+$special-grey: rgba(55, 82, 98, 0.75);
+$darker-grey: rgba(39, 57, 68, 1.0);
 $special-white: rgba(255, 255, 255, 0.50);
+$light-gray: rgba(207,207,207,1);
 
 *{
 	box-sizing: border-box;
@@ -95,4 +97,81 @@ html, body {
   transform: scale(1.1);
   color: white;
   text-decoration: none;
+}
+
+
+/*********  DASHBOARD ***************/
+
+#leftCol {
+    position: fixed;
+    width: 250px;
+    margin-top: 80px;
+    background-color: $darker-grey; 
+    overflow-y: scroll;
+    top: 0;
+    bottom: 0;
+    border:gray;
+    border-style: solid;
+    border-width: 1px;
+
+
+}
+
+.channel-form-container {
+  margin-top:25px;
+  width:100%;
+  height:35px;
+  background: white;
+  margin-bottom:25px;
+  font-size: 15px;
+  .plus-button {
+    width:35px;
+    height:35px;
+    margin-top:-5px;
+    float:left;
+    text-align:center;
+    text-decoration: none;
+    color:gray;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: "Lucida Grande", sans-serif;
+    border: none;
+    background: transparent;
+
+  }
+}
+
+.channel-textfield {
+  margin-left:35px;
+  width:215px;
+  height:35px;
+  border: 0px;
+  float:right;
+  margin-top:-30px;
+  background: transparent;
+  font-size: 15px;
+  font-family: "Lucida Grande", sans-serif;
+
+
+}
+
+.channel-card {
+  background-color: $light-gray;
+  height:70px;
+  width:100%;
+  border-style: none;
+  border-bottom: 1px solid gray;
+  font-family: DIN;
+  color:$special-grey;
+  font-size: 38px;
+  height: 70px;
+  line-height: 70px;
+}
+
+
+#content {
+    position: relative;            
+    margin-left: 250px;
+    margin-top: 80px;
+    background-color: black;
 }

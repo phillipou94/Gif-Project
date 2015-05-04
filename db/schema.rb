@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150428220420) do
+ActiveRecord::Schema.define(version: 20150504201853) do
 
   create_table "channels", force: :cascade do |t|
     t.integer  "user_id"
@@ -42,8 +42,11 @@ ActiveRecord::Schema.define(version: 20150428220420) do
     t.string   "email"
     t.string   "encrypted_password"
     t.string   "facebook_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "name"
+    t.string   "password_confirmation"
+    t.string   "salt"
   end
 
 end

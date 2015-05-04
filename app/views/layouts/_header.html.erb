@@ -5,11 +5,16 @@
           <div id = "kabush-logo"> </div>
         </div>
         <ul class = "right-nav"> 
-          <li><%= link_to "Mission", "#" %></li>
-          <li><%= link_to "Technology", "#" %></li>
-          <li><%= link_to "Team", "#" %></li>
-          <li><%= link_to "Blog", "#" %></li>
-          <li class = "enter-button"><%= link_to "Enter", "#" %></li>
+          <% if logged_in? %>
+            <li><%= link_to "Logout", logout_path, method: "delete" %></li>
+          <% else %>
+            <li><%= link_to "Mission", "#" %></li>
+            <li><%= link_to "Technology", "#" %></li>
+            <li><%= link_to "Team", "#" %></li>
+            <li><%= link_to "Blog", "#" %></li>
+            <li class = "enter-button"><%= link_to "Enter", "#sign_up_form", class: "fancybox" %></li>
+          <% end %>
+          
         </ul>
       </nav>
     </div>
