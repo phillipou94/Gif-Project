@@ -24,6 +24,8 @@ html, body {
     padding: 0;
     font-family: "Lucida Grande", sans-serif;
     background: white;
+    margin:0;
+    height:95%;
 }
 
 .header {
@@ -118,7 +120,13 @@ html, body {
 }
 
 .channel-form-container {
-  margin-top:25px;
+  height:100px;
+  background-color: $darker-grey;
+  position:fixed;
+}
+
+.channel-form {
+  margin-top:35px;
   width:100%;
   height:35px;
   background: white;
@@ -142,12 +150,12 @@ html, body {
 }
 
 .channel-textfield {
-  margin-left:35px;
+  margin-left:0px;
   width:215px;
   height:35px;
   border: 0px;
   float:right;
-  margin-top:-30px;
+  margin-top:-1px;
   background: transparent;
   font-size: 15px;
   font-family: "Lucida Grande", sans-serif;
@@ -155,23 +163,81 @@ html, body {
 
 }
 
-.channel-card {
-  background-color: $light-gray;
-  height:70px;
+.channel-card-container {
   width:100%;
-  border-style: none;
-  border-bottom: 1px solid gray;
-  font-family: DIN;
-  color:$special-grey;
-  font-size: 38px;
-  height: 70px;
-  line-height: 70px;
+  margin-top:100px;
+  overflow-y: scroll;
+  .channel-card {
+    background-color: $light-gray;
+    height:70px;
+    width:100%;
+    border-style: none;
+    border-bottom: 1px solid gray;
+    font-family: DIN;
+    color:$special-grey;
+    font-size: 38px;
+    height: 70px;
+    line-height: 70px;
+  }
 }
+
+
 
 
 #content {
     position: relative;            
     margin-left: 250px;
-    margin-top: 80px;
-    background-color: black;
+    margin-top: 81px;
+    height:100%;
+    top: 0;
+    bottom: 0;
+    background-color: $darker-grey;
+    top:0;
+    bottom:0;
+    overflow:hidden;
 }
+
+.video-frame {
+  background-color:black;
+}
+
+.center-content {
+  width:600px;
+  max-width:100%;
+  margin-left: auto;
+  margin-right:auto;
+  padding-top:35px;
+  height:700px;
+  overflow:hidden;
+}
+
+.button-container {
+  width:100%;
+  height:75px;
+  margin-top:0px;
+  display:inline-block;
+}
+
+.response-button {
+    background-color: $light-gray;
+    height: 100%;
+    width:50%;
+    border-style: none;
+    border-bottom: 1px solid gray;
+    font-family: DIN;
+    color:$special-grey;
+    font-size: 38px;
+    height: 70px;
+    line-height: 70px;
+    margin: 0;
+  }
+
+  #NO {
+    float:left;
+  }
+
+  .gif-info-container {
+    width:100%;
+    height:175px;
+    background: $light-gray;
+  }

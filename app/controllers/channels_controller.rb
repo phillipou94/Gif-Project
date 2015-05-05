@@ -5,6 +5,6 @@ class ChannelsController < ApplicationController
 		channel.user_id = user.id
 		channel.save
 		redirect_to :back
-	end 
+	end
 
 end

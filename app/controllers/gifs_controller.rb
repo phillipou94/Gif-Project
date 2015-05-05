@@ -2,10 +2,21 @@ require 'rubygems'
 require 'engtagger'
 class GifsController < ApplicationController
 
+	def get_gif_for_channel
+		channel = params[:channel]
+		url_string = "https://api.imgur.com/3/gallery/search?q_any="+channel+"?q_type=gif/viral"
+		request_with_url(url_string)
+
+	end 
+
 	def imgur_gif_for_text(text,channel)
 		word = get_random_word(text)
-
 		url_string = "https://api.imgur.com/3/gallery/search?q_any="+channel+"+"+word+"?q_type=gif/viral"
+		request_with_url(url_string)
+
+	end 
+
+	def request_with_url(url_string)
 		uri = URI(url_string)
 
 		http = Net::HTTP.new(uri.host, uri.port)
@@ -24,12 +35,14 @@ class GifsController < ApplicationController
 		gif.title = dict["title"]
 		gif.description = dict["description"]
 		gif.url = dict["link"]
+		@gif = gif
 		#gif.save
 
-		render status: 200, json: {
-			random:word,
-			result: gif
+		'''render status: 200, json: {
+			result: @gif
 		}.to_json
+		'''
+		redirect_to :back
 
 	end 
 

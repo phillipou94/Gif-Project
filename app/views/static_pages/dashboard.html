@@ -10,19 +10,45 @@
 		</div>
 		<div id="leftCol">
 			<div class = "channel-form-container">
-				
-				<%= form_for(:channel,url:create_channel_path) do |f| %>
-				  <%= f.submit "+",:class => 'plus-button' %>
-				  <%= f.text_field :name, class: 'channel-textfield', :placeholder => "Create Channel" %>
+				<div class = "channel-form">
+					<%= form_for(:channel,url:create_channel_path) do |f| %>
+					  <%= f.submit "+",:class => 'plus-button' %>
+					  <%= f.text_field :name, class: 'channel-textfield', :placeholder => "Create Channel" %>
+					<% end %>
+				</div>
+			</div>
+			<div class = "channel-card-container">
+				<% current_user.channels.each do |channel| %>
+					<%= button_to channel.name.upcase, {:action => "get_gif_for_channel", :channel=> channel.name, :remote => true},{:class => "channel-card"}%>
+					
 				<% end %>
 			</div>
-			<% current_user.channels.each do |channel| %>
-				<button class = "channel-card"> <%=channel.name.upcase %> </button>
-			<% end %>
 
 		</div> 
         <div id="content"> 
-       
+        	<div class = "center-content">
+        		<% if @gif.nil? %>
+        			<video height="300" width="100%" autoplay="" loop="" muted="" class = "video-frame">
+						<source type="video/mp4" src="http://i.imgur.com/eHAlXli.mp4">
+					</video>
+				<%else%>
+					<video height="300" width="100%" autoplay="" loop="" muted="" class = "video-frame">
+						<source type="video/mp4" src= <%= @gif.mp4 %> >
+					</video>
+				<%end%>
+
+				<div class = "button-container">
+					<button class = "response-button" id = "NO"> NO </button>
+					<button class = "response-button" id = "YES"> YES </button>
+        		</div>
+
+        		<div class = "gif-info-container">
+
+        		</div>
+
+        	</div>  
+        	
+
              
     	</div>
 		
