@@ -1,23 +1,23 @@
 class StaticPagesController < ApplicationController
 	def home
-		if @selected_channel.nil?
-			@gif = get_random_gif
-		else
-			url_string = "https://api.imgur.com/3/gallery/search?q_any="+@selected_channel+"?q_type=gif/viral"
-			@gif = request_with_url(url_string)
-		end 
 		
 		if (!logged_in?)
 			render "home"
 		else 
+			@selected_channel = params[:selected_channel]
+			if @selected_channel.nil?
+				@gif = get_random_gif
+			else
+				url_string = "https://api.imgur.com/3/gallery/search?q_any="+@selected_channel+"?q_type=gif/viral"
+				@gif = request_with_url(url_string)
+			end 
 			render "dashboard"
 		end 
 		
 	end 
 
 	def get_gif_for_channel
-		@selected_channel = params[:channel]
-		home
+		redirect_to root_path(:selected_channel => params[:channel])
 
 	end 
 
@@ -25,7 +25,7 @@ class StaticPagesController < ApplicationController
 		word = get_random_word(text)
 		url_string = "https://api.imgur.com/3/gallery/search?q_any="+channel+"+"+word+"?q_type=gif/viral"
 		@gif = request_with_url(url_string)
-		redirect_to :back
+		redirect_to root_path
 
 	end 
 
@@ -63,12 +63,18 @@ class StaticPagesController < ApplicationController
 		url_string = "https://api.imgur.com/3/gallery/search?q_any=funny?q_type=gif/viral"
 		gif = request_with_url(url_string)
 		return gif
-'''
-		render status: 200, json: {
-			result: gif
-		}.to_json
-		'''
+	end 
 
+	def save_gif
+		dict = params[:gif]
+		gif = Gif.new
+		gif.mp4 = dict["mp4"]
+		gif.title = dict["title"]
+		gif.description = dict["description"]
+		gif.url = dict["url"]
+		gif.user_id = current_user.id
+		gif.save
+		redirect_to root_path(:selected_channel => params[:channel])
 	end 
 
 

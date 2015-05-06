@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html class = "dashboard-html">
 	<head> 
-
 
 	</head>
 	<body>
@@ -19,7 +18,14 @@
 			</div>
 			<div class = "channel-card-container">
 				<% current_user.channels.each do |channel| %>
-					<%= button_to channel.name.upcase, {:action => "get_gif_for_channel", :channel=> channel.name, :remote => true},{:class => "channel-card"}%>
+					<div class = "channel-card-wrapper"
+					<% if @selected_channel && channel.name.upcase == @selected_channel.upcase %>
+						<%= button_to channel.name.upcase, {:action => "get_gif_for_channel", :channel=> channel.name, :remote => true},{:class => "channel-card", :id => "selected-channel"}%>
+					<%else%>
+						<%= button_to channel.name.upcase, {:action => "get_gif_for_channel", :channel=> channel.name, :remote => true},{:class => "channel-card"}%>
+					<%end%>
+					<%= button_to "X",{:action => "get_gif_for_channel", :channel=> channel.name, :remote => true},{:class => "delete-button", :id => "delete-channel"} %>
+					</div>
 					
 				<% end %>
 			</div>
@@ -32,19 +38,35 @@
 						<source type="video/mp4" src="http://i.imgur.com/eHAlXli.mp4">
 					</video>
 				<%else%>
-					<video height="300" width="100%" autoplay="" loop="" muted="" class = "video-frame">
+					<% if @gif.title %>
+						<h1 class = "gif-title"> <%= @gif.title %> </h1>
+					<%end%>
+					<video height="250" width="100%" autoplay="" loop="" muted="" class = "video-frame">
 						<source type="video/mp4" src= <%= @gif.mp4 %> >
 					</video>
+
 				<%end%>
 
 				<div class = "button-container">
-					<button class = "response-button" id = "NO"> NO </button>
-					<button class = "response-button" id = "YES"> YES </button>
+					<%= button_to "NO", {:action => "get_gif_for_channel", :channel=> @selected_channel, :remote => true},{:class => "response-button", :id => "NO"}%>
+					<%= button_to "YES", {:action => "save_gif",:channel=> @selected_channel, :gif=> {:url=>@gif.url,:mp4=>@gif.mp4,:title=>@gif.title,:description=>@gif.description}, :remote => true},{:class => "response-button", :id => "YES"}%>
         		</div>
 
         		<div class = "gif-info-container">
-
+        			<div id ="gif-info-content">
+        			<h3> Why was this Chosen? </h3>
+        			<p> Our proprietary preference selection algorithm selected this gif based on traits that best optimize for your interests,personality, previous selections, and insecurities. Just watch the video and stop asking stupid questions. 
+        			</p>
+        			<% if @gif %>
+        					<p> <%=@gif.url %> </p>
+        			<% end %>
+        			</div>
+        			
         		</div>
+
+
+        		<p class = "copyright">© 2015 Kabush Media, Inc., All Rights Reserved  </p>
+				<p class = "copyright">Kaboosh and the GIF Genome Project are registered trademarks of Kaboosh Media, Inc.</p>
 
         	</div>  
         	

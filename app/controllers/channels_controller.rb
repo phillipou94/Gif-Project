@@ -4,7 +4,7 @@ class ChannelsController < ApplicationController
 		user = current_user()
 		channel.user_id = user.id
 		channel.save
-		redirect_to :back
+		redirect_to root_path
 	end
 
 end

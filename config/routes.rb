@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
   post 'create_channel' => 'channels#create'
   post 'get_gif' => 'static_pages#get_gif_for_channel'
+  post 'save_gif' =>  'static_pages#save_gif'
   #resources :sessions
 end

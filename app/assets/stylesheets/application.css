@@ -19,7 +19,7 @@ NAVIGATION BAR
 *********************************/
 
 nav {
-   position: fixed;
+   position: absolute;
    top: 0px;
    float:top;
    max-width: 100%;

@@ -24,8 +24,11 @@ html, body {
     padding: 0;
     font-family: "Lucida Grande", sans-serif;
     background: white;
-    margin:0;
-    height:95%;
+
+}
+
+.dashboard-html {
+  background-color:$darker-grey;
 }
 
 .header {
@@ -105,7 +108,7 @@ html, body {
 /*********  DASHBOARD ***************/
 
 #leftCol {
-    position: fixed;
+    position: absolute;
     width: 250px;
     margin-top: 80px;
     background-color: $darker-grey; 
@@ -115,6 +118,7 @@ html, body {
     border:gray;
     border-style: solid;
     border-width: 1px;
+    height:100%;
 
 
 }
@@ -122,7 +126,6 @@ html, body {
 .channel-form-container {
   height:100px;
   background-color: $darker-grey;
-  position:fixed;
 }
 
 .channel-form {
@@ -130,7 +133,7 @@ html, body {
   width:100%;
   height:35px;
   background: white;
-  margin-bottom:25px;
+  margin-bottom:0px;
   font-size: 15px;
   .plus-button {
     width:35px;
@@ -155,17 +158,16 @@ html, body {
   height:35px;
   border: 0px;
   float:right;
-  margin-top:-1px;
+  margin-top:-31px;
   background: transparent;
   font-size: 15px;
   font-family: "Lucida Grande", sans-serif;
-
 
 }
 
 .channel-card-container {
   width:100%;
-  margin-top:100px;
+  margin-top:-25px;
   overflow-y: scroll;
   .channel-card {
     background-color: $light-gray;
@@ -178,16 +180,55 @@ html, body {
     font-size: 38px;
     height: 70px;
     line-height: 70px;
+
+
   }
+  
+}
+
+.delete-button {
+  background-color: transparent;
+    height:70px;
+    width:25%;
+    border-style: none;
+    border-bottom: 1px solid gray;
+    font-family: DIN;
+    color:$special-grey;
+    font-size: 20px;
+    height: 70px;
+    line-height: 70px;
+    display: block;
+    float: left;  
+    z-index: 3;
+    position: relative; /*newly added*/
+    top: -70px;/*newly added*/
+    margin-bottom:-70px;
+    display:none;
+
+}
+
+.channel-card:hover{
+  /*background-color:white;*/
+  display:block;
+}
+
+.channel-card-wrapper:hover .channel-card, .channel-card-wrapper:hover .delete-button {
+  background-color:white;
+  display:block;
+
 }
 
 
+
+#selected-channel{
+  background-color: white;
+}
 
 
 #content {
     position: relative;            
     margin-left: 250px;
-    margin-top: 81px;
+    margin-top: 80px;
     height:100%;
     top: 0;
     bottom: 0;
@@ -195,10 +236,22 @@ html, body {
     top:0;
     bottom:0;
     overflow:hidden;
+    border-top: 1px solid gray;
+
+}
+
+.gif-title {
+    color:white;
+    font-family: 'DIN';
+    text-align: center;
+    background-color: black;
+    margin:0;
+    padding-top:20px;
 }
 
 .video-frame {
   background-color:black;
+  padding-bottom:20px;
 }
 
 .center-content {
@@ -207,15 +260,16 @@ html, body {
   margin-left: auto;
   margin-right:auto;
   padding-top:35px;
-  height:700px;
   overflow:hidden;
+  height:100%;
 }
 
 .button-container {
   width:100%;
-  height:75px;
+  height:50px;
   margin-top:0px;
   display:inline-block;
+  margin-bottom:20px;
 }
 
 .response-button {
@@ -232,12 +286,48 @@ html, body {
     margin: 0;
   }
 
-  #NO {
-    float:left;
-  }
+.response-button:hover {
+  background-color:white;
+}
 
-  .gif-info-container {
-    width:100%;
-    height:175px;
-    background: $light-gray;
+#NO {
+  float:left;
+}
+
+.gif-info-container {
+  width:100%;
+  height:200px;
+  margin-top:20px;
+  background: $light-gray;
+  padding-top:20px;
+  text-align: center
+  
+}
+
+#gif-info-content{
+  width:100%;
+  text-align: center;
+}
+
+.copyright {
+  width:100%;
+  text-align: center;
+  color:white;
+  font-size:12px;
+}
+
+#extra-links {
+  width:100%;
+  list-style: none;
+  background-color: red;
+  a {
+    color:$special-grey;
+    text-decoration: none;
   }
+  li {
+    color:white;
+    list-style: none;
+  }
+}
+
+
