@@ -203,20 +203,15 @@ html, body {
     position: relative; /*newly added*/
     top: -70px;/*newly added*/
     margin-bottom:-70px;
-    display:none;
+    
 
 }
 
 .channel-card:hover{
-  /*background-color:white;*/
-  display:block;
-}
-
-.channel-card-wrapper:hover .channel-card, .channel-card-wrapper:hover .delete-button {
   background-color:white;
   display:block;
-
 }
+
 
 
 

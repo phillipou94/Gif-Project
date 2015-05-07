@@ -18,14 +18,12 @@
 			</div>
 			<div class = "channel-card-container">
 				<% current_user.channels.each do |channel| %>
-					<div class = "channel-card-wrapper"
 					<% if @selected_channel && channel.name.upcase == @selected_channel.upcase %>
 						<%= button_to channel.name.upcase, {:action => "get_gif_for_channel", :channel=> channel.name, :remote => true},{:class => "channel-card", :id => "selected-channel"}%>
+						<%= button_to "X",delete_channel_path(:channel_id => channel.id),{:class => "delete-button", :id => "delete-channel"} %>
 					<%else%>
 						<%= button_to channel.name.upcase, {:action => "get_gif_for_channel", :channel=> channel.name, :remote => true},{:class => "channel-card"}%>
 					<%end%>
-					<%= button_to "X",{:action => "get_gif_for_channel", :channel=> channel.name, :remote => true},{:class => "delete-button", :id => "delete-channel"} %>
-					</div>
 					
 				<% end %>
 			</div>

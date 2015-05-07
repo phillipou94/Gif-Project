@@ -7,4 +7,11 @@ class ChannelsController < ApplicationController
 		redirect_to root_path
 	end
 
+	def destroy
+		channel=Channel.find_by(id:params[:channel_id])
+		channel.destroy
+		redirect_to root_path
+
+	end 
+
 end
