@@ -1,15 +1,20 @@
 
 class UsersController < ApplicationController
-
+	def new
+		@user = User.new
+	end 
 	def signup
-		user = User.new(user_params)
-		if user.save
-			log_in user
-			
+		@user = User.new(user_params)
+		@user.gifs_seen = 0
+		if @user.save
+			log_in @user	
+		else
+			 @user.errors.full_messages.each do |msg|
+      			flash[:danger] = "Login Failed: "+msg
+      		end 
 		end 
-
 		redirect_to root_url
-
+		
 	end 
 
 	private

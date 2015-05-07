@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150504201853) do
+ActiveRecord::Schema.define(version: 20150507225316) do
 
   create_table "channels", force: :cascade do |t|
     t.integer  "user_id"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20150504201853) do
     t.string   "name"
     t.string   "password_confirmation"
     t.string   "salt"
+    t.integer  "gifs_seen"
   end
 
 end

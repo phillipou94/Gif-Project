@@ -3,8 +3,9 @@
     <%= stylesheet_link_tag "application" %>
     </head>
     <div class = "signup">
-      <%= form_for(:user,url:signup_path, :html => {:class => 'signup_form'} )do |f| %> <!-- built-in form creation function -->
+      <%= form_for(@user,url:signup_path, :html => {:class => 'signup_form'} )do |f| %> <!-- built-in form creation function -->
         <%= f.label "Join Us", class: 'join_us' %>
+        <%= render 'shared/error_messages' %>
         <%= f.text_field :name, class: 'form-control', :placeholder => "Name" %>
         <%= f.text_field :email, class: 'form-control', :placeholder => "Email" %>
         <%= f.password_field :password, class: 'form-control', :placeholder => "Password" %>

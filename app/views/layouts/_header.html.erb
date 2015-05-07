@@ -6,7 +6,6 @@
         </div>
         <ul class = "right-nav"> 
           <% if logged_in? %>
-            <li><%= link_to "Logout", logout_path, method: "delete" %></li>
             <li><%= image_tag avatar_url(current_user), :class => "profile-picture" %> </li>
           <% else %>
             <li><%= link_to "Mission", "#" %></li>

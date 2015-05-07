@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
 	def home
-		
 		if (!logged_in?)
+			@user = User.new
 			render "home"
 		else 
 			@selected_channel = params[:selected_channel]
@@ -11,6 +11,10 @@ class StaticPagesController < ApplicationController
 				url_string = "https://api.imgur.com/3/gallery/search?q_any="+@selected_channel+"?q_type=gif/viral"
 				@gif = request_with_url(url_string)
 			end 
+			if current_user
+				current_user.increment!(:gifs_seen)
+			end 
+			
 			render "dashboard"
 		end 
 		
