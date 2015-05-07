@@ -8,10 +8,13 @@
     url(DIN.ttf)
  }
 
-$special-grey: rgba(55, 82, 98, 0.75);
-$darker-grey: rgba(39, 57, 68, 1.0);
+$special-grey: rgba(57, 60, 68, 0.85); /*rgba(55, 82, 98, 0.75);*/
+$darker-grey: #222429;
 $special-white: rgba(255, 255, 255, 0.50);
 $light-gray: rgba(207,207,207,1);
+$special-blue: #1253A4;
+$teal: #3DAABD;
+$special-pink: #E04186;
 
 *{
 	box-sizing: border-box;
@@ -47,6 +50,8 @@ html, body {
     margin-top: 20%;
     margin-left: auto;
     margin-right: auto;
+
+
 	h1 {
 		color:white;
 		text-align:center;
@@ -71,7 +76,21 @@ html, body {
 
 }
 
-.button {
+#full-kabush-logo {
+  height:80px;
+  width:400px;
+  background: url('KabushFull.png') no-repeat center;
+  background-color:transparent;
+  vertical-align: center;
+  margin-top: 25px;
+  margin-left:25px;
+  background-size: 100%;
+  margin-left:auto;
+  margin-right:auto;
+
+    }
+
+.enter-button {
     display: inline-block;
     padding: 1em;
     margin-top:20px;
@@ -83,7 +102,12 @@ html, body {
     border-style: solid;
     border-width: 1px;
     width:250px;
-    margin-left: 40%;
+    margin-left: 42%;
+    a, a:visited {
+      color: $special-white;
+      text-decoration: none;
+      
+    }
 }
 
 .grow {
@@ -96,6 +120,7 @@ html, body {
   transform: translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   text-decoration: none;
+  
 }
 .grow:hover, .grow:focus, .grow:active {
   -webkit-transform: scale(1.1);
@@ -165,18 +190,21 @@ html, body {
 
 }
 
+.channel-textfield:focus {
+  outline:none;
+}
+
 .channel-card-container {
   width:100%;
   margin-top:-25px;
   overflow-y: scroll;
   .channel-card {
-    background-color: $light-gray;
+    background-color: $special-grey;
     height:70px;
     width:100%;
-    border-style: none;
-    border-bottom: 1px solid gray;
+    border: 1px solid gray;
     font-family: DIN;
-    color:$special-grey;
+    color:$teal;
     font-size: 38px;
     height: 70px;
     line-height: 70px;
@@ -193,7 +221,7 @@ html, body {
     border-style: none;
     border-bottom: 1px solid gray;
     font-family: DIN;
-    color:$special-grey;
+    color:darker-grey;
     font-size: 20px;
     height: 70px;
     line-height: 70px;
@@ -208,7 +236,7 @@ html, body {
 }
 
 .channel-card:hover{
-  background-color:white;
+  background-color:$darker-grey;
   display:block;
 }
 
@@ -216,7 +244,7 @@ html, body {
 
 
 #selected-channel{
-  background-color: white;
+  color:$special-pink;
 }
 
 
@@ -268,13 +296,12 @@ html, body {
 }
 
 .response-button {
-    background-color: $light-gray;
+    background-color: $special-grey;
+    border: 1px solid gray;
     height: 100%;
     width:50%;
-    border-style: none;
-    border-bottom: 1px solid gray;
     font-family: DIN;
-    color:$special-grey;
+    color:$teal;
     font-size: 38px;
     height: 70px;
     line-height: 70px;
@@ -282,20 +309,33 @@ html, body {
   }
 
 .response-button:hover {
-  background-color:white;
+  background-color:$darker-grey;
 }
 
 #NO {
   float:left;
+  color:$special-pink;
 }
 
 .gif-info-container {
   width:100%;
   height:200px;
   margin-top:20px;
-  background: $light-gray;
+  background-color: $special-grey;
+  border: 1px solid gray;
   padding-top:20px;
-  text-align: center
+  text-align: center;
+  h3 {
+    margin-top:-5px;
+    color:$teal;
+  }
+  p {
+    color:$light-gray;
+  }
+  #gif-link {
+    color:white;
+    font-weight: bold;
+  }
   
 }
 

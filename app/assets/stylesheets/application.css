@@ -18,6 +18,12 @@
 NAVIGATION BAR
 *********************************/
 
+@font-face {
+  font-family: DIN;
+  src: 
+    url(DIN.ttf)
+ }
+
 nav {
    position: absolute;
    top: 0px;
@@ -40,19 +46,20 @@ nav .left-nav {
 #kabush-logo {
 	float:left;
 	height:35px;
-	width:200px;
-	background: url('Kabush_Logo.png') no-repeat center;
+	width:35px;
+	background: url('KB.png') no-repeat center;
+  background-color:transparent;
 	vertical-align: center;
 	margin-top: 25px;
-	margin-left:10px;
+	margin-left:25px;
 	background-size: 100%;
 }
 
 nav .right-nav {
   float:right;
   list-style: none;
-  margin: 25px 10px;
-  margin-top:35px;
+  margin-right:10px;
+  margin-top:30px;
   padding-bottom:0px;
   padding-right:10px;
 
@@ -61,7 +68,13 @@ nav .right-nav {
 nav .right-nav li {
   display: inline-block; /* allows list items to be in blocks in a row */
   color:rgba(255, 255, 255, 0.50);
+  margin-bottom:30px;
 
+}
+
+.profile-picture{
+  height:40px;
+  width:40px;
 }
 
 nav .right-nav a, nav .right-nav a:visited {
@@ -104,3 +117,113 @@ nav .right-nav a:hover {
   background-color: rgba(255, 255, 255, 0.25);
   text-decoration: none;
 }
+
+/********** SIGN UP ******************/
+#sign_up_form {
+  padding-top:40px;
+  background-color: #222429;
+  height:100%;
+  width:700px;
+  display:inline-block;
+
+}
+
+.join_us {
+  color:#E04186;
+  font-size: 30px;
+  font-family:DIN;
+}
+
+.sign_in_header {
+  color:#3DAABD;
+  font-size: 30px;
+  font-family:DIN;
+}
+
+.signup_form {
+
+  height:325px;
+  width:40%;
+  float:left;
+  display:table-cell;
+  vertical-align:middle;
+  margin-left:40px;
+
+}
+
+.form-control, .signin-form-control {
+    width:100%;
+    height:40px;
+    font-size:17px;
+    margin-top: 5px;
+    margin-bottom:5px;
+    background-color:transparent;
+    border-style: none;
+    border-bottom: 3px solid #D8D8D8;
+    color:white;
+    font-family:DIN;
+  }
+
+.form-control:focus {
+  outline: none;
+  border-style: none;
+  border-bottom: 3px solid #E04186;
+  color:white;
+}
+
+.signin-form-control:focus {
+  outline: none;
+  border-style: none;
+  border-bottom: 3px solid #3DAABD;
+  color:white;
+}
+
+.signup_button, .signin_button {
+  width: 100%;
+  height:40px;
+  border-style:none;
+  margin-top:15px;
+  font-size: 25px;
+  font-family:DIN;
+  background-color:transparent;
+  border: 1px solid #D8D8D8;
+
+}
+
+.signup_button:hover {
+  background-color:#E04186;
+}
+
+.signin_button:hover {
+  background-color:#3DAABD;
+}
+.signin_form {
+  width:40%;
+  height:325px;
+  float:right;
+  display:table-cell;
+  vertical-align:middle;
+  margin-right:40px;
+  
+}
+
+
+/****** OVERRIDING PLACEHOLDER TEXT COLOR *****/
+
+*::-webkit-input-placeholder {
+    color: #393C44;
+}
+*:-moz-placeholder {
+    /* FF 4-18 */
+    color: #393C44;
+}
+*::-moz-placeholder {
+    /* FF 19+ */
+    color: #393C44;
+}
+*:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #393C44;
+}
+
+
