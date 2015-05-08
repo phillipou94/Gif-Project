@@ -282,7 +282,7 @@ nav .right-nav a:hover {
 .video-content {
   width:100%;
   display:inline-block;
-  padding-top:35px;
+  padding-top:15px;
   overflow:hidden;
   height:100%;
 }
@@ -293,14 +293,11 @@ nav .right-nav a:hover {
   padding-bottom:20px;
   width:45%;
   margin-left:50px;
-  margin-bottom:20px;
+  margin-bottom:10px;
 
 }
 
-.video-frame-profile:hover {
-  
 
-}
 
 .delete-video-button {
     background-color: transparent;
@@ -317,6 +314,17 @@ nav .right-nav a:hover {
     float:left;
     margin-left:10px;
     margin-top:-10px;
+    display:none;
+}
+
+.video-frame-profile:hover .delete-video-button {
+  display:block;
+
+}
+
+.video-frame-profile-right:hover .delete-video-button {
+  display:block;
+
 }
 
 .video-frame-profile-right {
@@ -325,10 +333,10 @@ nav .right-nav a:hover {
    width:45%;
    padding-top:20px;
    margin:0;
-   margin-top:-370px;
+   margin-top:-285px;
    float:right;
    margin-right:50px;
-   margin-bottom:20px;
+   margin-bottom:10px;
 
 }
 
@@ -346,7 +354,7 @@ nav .right-nav a:hover {
 
 .pagination {
   margin-top:35px;
-  margin-bottom:35px;
+  margin-bottom:15px;
   width:100%;
   text-align:center;
 }

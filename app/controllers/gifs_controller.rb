@@ -16,6 +16,12 @@ class GifsController < ApplicationController
 
 	end 
 
+	def destroy
+		gif = Gif.find_by(id:params[:id])
+		gif.destroy
+		redirect_to profile_path
+	end 
+
 	def request_with_url(url_string)
 		uri = URI(url_string)
 

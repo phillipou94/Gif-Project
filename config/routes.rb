@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post 'create_channel' => 'channels#create'
   post 'get_gif' => 'static_pages#get_gif_for_channel'
   post 'save_gif' =>  'static_pages#save_gif'
+  post 'delete_gif' => 'gifs#destroy'
   post 'delete_channel' =>'channels#destroy'
 
   resources :users

@@ -31,17 +31,17 @@
         		<% @gifs.each_with_index do |gif,index| %>
         			<% if index%2==0 %>
                         <div class = "video-frame-profile" >
-                            <%= button_to "X",delete_channel_path(:channel_id => gif.id),{:class => "delete-video-button"} %>
+                            <%= button_to "X",delete_gif_path(:id => gif.id),{:class => "delete-video-button"} %>
                             <h1 class = "gif-title"> <%= gif.title %> </h1>
-    						<video height="250" width="100%" autoplay="" loop="" muted="">
+    						<video height="175" width="100%" autoplay="" loop="" muted="">
     							<source type="video/mp4" src= <%= gif.mp4 %> >
     						</video>
                         </div>
         			<% else %>
         			    <div class = "video-frame-profile-right" >
-                            <%= button_to "X",delete_channel_path(:channel_id => gif.id),{:class => "delete-video-button"} %>
+                            <%= button_to "X",delete_gif_path(:id => gif.id),{:class => "delete-video-button"} %>
                             <h1 class = "gif-title"> <%= gif.title %> </h1>
-    						<video height="250" width="100%" autoplay="" loop="" muted="">
+    						<video height="175" width="100%" autoplay="" loop="" muted="">
     							<source type="video/mp4" src= <%= gif.mp4 %> >
     						</video>
                         </div>
