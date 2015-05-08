@@ -10,7 +10,7 @@
 
 $special-grey: rgba(57, 60, 68, 0.85); /*rgba(55, 82, 98, 0.75);*/
 $darker-grey: #222429;
-$special-white: rgba(255, 255, 255, 0.50);
+
 $light-gray: rgba(207,207,207,1);
 $special-blue: #1253A4;
 $teal: #3DAABD;
@@ -83,14 +83,14 @@ html, body {
     background-color: transparent;
     text-decoration: none;
     text-align:center;
-    color: $special-white;
-    border:$special-white;
+    color: rgba(255, 255, 255, 0.50);
+    border:rgba(255, 255, 255, 0.50);
     border-style: solid;
     border-width: 1px;
     width:15%;
     margin-left: 42%;
     a, a:visited {
-      color: $special-white;
+      color: rgba(255, 255, 255, 0.50);
       text-decoration: none;
       
     }
