@@ -47,8 +47,6 @@ nav .left-nav {
 	float:left;
 	height:35px;
 	width:35px;
-	background: url('KB.png') no-repeat center;
-  background-color:transparent;
 	vertical-align: center;
 	margin-top: 25px;
 	margin-left:25px;
@@ -72,9 +70,11 @@ nav .right-nav li {
 
 }
 
-.profile-picture{
-  height:40px;
-  width:40px;
+.profile-picture-nav{
+  height:50px;
+  width:50px;
+  border-radius:25px;
+  margin-top:-15px;
 }
 
 nav .right-nav a, nav .right-nav a:visited {
@@ -247,6 +247,101 @@ nav .right-nav a:hover {
   text-align:center;
   color:white;
   z-index: 20;
+}
+
+
+/**************     Profile     **************/
+
+.profile-picture{
+  height:80px;
+  width: 80px;
+  border-radius:40px;
+  margin-left:75px;
+  margin-top:25px;
+}
+
+.profile-info ul {
+  list-style: none;
+  color:#979797;
+  margin-top:50px;
+}
+
+.profile-info li {
+  margin-bottom:20px;
+  margin-left:-25px;
+}
+
+#logout {
+  position: absolute;
+  bottom: 0;
+  width:100%;
+  height:65px;
+  font-size: 30px;
+}
+
+.video-content {
+  width:100%;
+  display:inline-block;
+  padding-top:35px;
+  overflow:hidden;
+  height:100%;
+}
+
+.video-frame-profile {
+  background-color:black;
+  padding-top:20px;
+  padding-bottom:20px;
+  width:45%;
+  margin-left:50px;
+  margin-bottom:20px;
+
+}
+
+.video-frame-profile:hover {
+  
+  background-color:red;
+
+}
+
+.video-frame-profile-right {
+  background-color:black;
+   padding-bottom:20px;
+   width:45%;
+   padding-top:20px;
+   margin:0;
+   margin-top:-312px;
+   float:right;
+   margin-right:50px;
+   margin-bottom:20px;
+
+}
+
+.gif-title-profile {
+    color:white;
+    font-family: 'DIN';
+    text-align: center;
+    background-color: black;
+    margin:0;
+    width:45%;
+    padding-top:20px;
+}
+
+/****** Pagination ******/
+
+.pagination {
+  margin-top:35px;
+  margin-bottom:35px;
+  width:100%;
+  text-align:center;
+}
+
+.pagination a, .pagination a:visited, .pagination .disabled {
+  text-decoration: none;
+  color:#3DAABD;
+}
+
+.pagination a:hover, .pagination .current{
+  color:#E04186;
 }
 
 

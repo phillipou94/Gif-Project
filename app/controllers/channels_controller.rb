@@ -4,6 +4,7 @@ class ChannelsController < ApplicationController
 		user = current_user()
 		channel.user_id = user.id
 		channel.save
+		@selected_channel = channel.name
 		redirect_to root_path
 	end
 

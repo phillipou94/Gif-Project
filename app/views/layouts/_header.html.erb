@@ -2,11 +2,18 @@
     <div class="container">
       <nav>
         <div class = "left-nav">
-          <div id = "kabush-logo"> </div>
+          <div>
+            <%= link_to root_path do %>
+                 <%= image_tag 'KB.png', :id => "kabush-logo"%>
+                <% end %>
+           </div>
         </div>
         <ul class = "right-nav"> 
           <% if logged_in? %>
-            <li><%= image_tag avatar_url(current_user), :class => "profile-picture" %> </li>
+            <li><%= link_to profile_path do %>
+                 <%= image_tag avatar_url(current_user), :class => "profile-picture-nav" %>
+                <% end %>
+           </li>
           <% else %>
             <li><%= link_to "Mission", "#" %></li>
             <li><%= link_to "Technology", "#" %></li>

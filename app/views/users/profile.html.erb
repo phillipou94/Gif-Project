@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html class = "dashboard-html">
+	<head> 
+
+	</head>
+	<body>
+		<div class = "header">
+			<%= render "layouts/header" %>
+		</div>
+		<div id="leftCol">
+			<div class = "channel-form-container">
+				<%= link_to profile_path do %>
+                 <%= image_tag avatar_url(current_user), :class => "profile-picture" %>
+                <% end %>
+            <div class = "profile-info">
+            	<ul>
+            		<li>Name: <span><%=@current_user.name%></span></li>
+            		<li>Date Joined: <span><%=@current_user.created_at.strftime('%b %e, %Y')%></span></li>
+            		<li>Gifs Seen: <span><%=@current_user.gifs_seen%></span></li>
+            		<li>Gifs Saved: <span><%=@current_user.gifs.count%></span></li>
+
+            	</ul>
+            </div>
+            <%= button_to "Logout", {:action => "destroy",:method => "delete",:controller =>"sessions", :remote => true},{:class => "response-button", :id => "logout"}%>
+
+			</div>
+
+		</div> 
+        <div id="content"> 
+        	<div class = "video-content">
+        		<% @gifs.each_with_index do |gif,index| %>
+        			<% if index%2==0 %>
+                        <div class = "video-frame-profile" >
+						<video height="250" width="100%" autoplay="" loop="" muted="">
+							<source type="video/mp4" src= <%= gif.mp4 %> >
+						</video>
+                        </div>
+        			<% else %>
+        			    <div class = "video-frame-profile-right" >
+						<video height="250" width="100%" autoplay="" loop="" muted="">
+							<source type="video/mp4" src= <%= gif.mp4 %> >
+						</video>
+                        </div>
+        			<% end %>
+
+
+        		<%end%>
+        		<%= will_paginate @gifs %>
+        		<p class = "copyright">© 2015 Kabush Media, Inc., All Rights Reserved  </p>
+				<p class = "copyright">Phillip Ou was bored and he made this. Does he regret it? Some times.</p>
+
+        	</div>  
+        	
+
+             
+    	</div>
+		
+	</body>
+</html>

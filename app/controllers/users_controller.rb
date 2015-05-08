@@ -13,8 +13,13 @@ class UsersController < ApplicationController
       			flash[:danger] = "Login Failed: "+msg
       		end 
 		end 
-		redirect_to root_url
-		
+		redirect_to root_url	
+	end 
+
+	def profile
+		@current_user = current_user
+		@gifs = @current_user.gifs.paginate(page: params[:page], per_page: 4).order('created_at DESC')
+		render 'profile'
 	end 
 
 	private
