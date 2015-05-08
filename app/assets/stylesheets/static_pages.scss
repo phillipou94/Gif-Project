@@ -43,26 +43,12 @@ html, body {
 
 }
 .header-content {
-	background-size:100% 100%;
     color:white;
     max-width: 100%;
     width:100%;
-    margin-top: 20%;
-    margin-left: auto;
-    margin-right: auto;
+    margin-top:20%;
+    left: 50%;
 
-
-	h1 {
-		color:white;
-		text-align:center;
-        font-family: DIN;
-        font-size:35px;
-        width: 550px;
-        margin-left:auto;
-        margin-right:auto;
-        font-weight:600;
-        letter-spacing: 5px;
-	}
     h2 {
         margin-left:auto;
         margin-right:auto;
@@ -70,7 +56,7 @@ html, body {
         font-size:16px;
         font-weight: 100;
         padding-top:0px;
-        width: 600px;
+        width: 50%;
     }
 
 
@@ -101,7 +87,7 @@ html, body {
     border:$special-white;
     border-style: solid;
     border-width: 1px;
-    width:250px;
+    width:15%;
     margin-left: 42%;
     a, a:visited {
       color: $special-white;
