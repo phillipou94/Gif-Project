@@ -2,6 +2,18 @@
   	<head>
     <%= stylesheet_link_tag "application" %>
     </head>
+    <div class = "signin">
+      
+      <%= form_for(:session,url:login_path, :html => {:class => 'signin_form'}) do |f| %> <!-- built-in form creation function -->
+        <%= f.label "Sign In", class: 'sign_in_header' %>
+        <%= f.text_field :email, class: 'signin-form-control', :placeholder => "Email" %>
+
+        <%= f.password_field :password, class: 'signin-form-control', :placeholder => "Password" %>
+
+        <%= f.submit("Sign In",:style => 'color:white', :class => "signin_button") %>
+      <% end %>
+    </div>
+    
     <div class = "signup">
       <%= form_for(@user,url:signup_path, :html => {:class => 'signup_form'} )do |f| %> <!-- built-in form creation function -->
         <%= f.label "Join Us", class: 'join_us' %>
@@ -13,17 +25,7 @@
         <%= f.submit("Sign Up",:style => 'color:white', :class => "signup_button") %>
       <% end %>
     </div> 
-  	<div class = "signin">
-      
-      <%= form_for(:session,url:login_path, :html => {:class => 'signin_form'}) do |f| %> <!-- built-in form creation function -->
-        <%= f.label "Sign In", class: 'sign_in_header' %>
-	      <%= f.text_field :email, class: 'signin-form-control', :placeholder => "Email" %>
-
-	      <%= f.password_field :password, class: 'signin-form-control', :placeholder => "Password" %>
-
-	      <%= f.submit("Sign In",:style => 'color:white', :class => "signin_button") %>
-      <% end %>
-    </div>
+  	
 
 
   </div>

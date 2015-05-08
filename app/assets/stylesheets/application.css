@@ -142,13 +142,24 @@ nav .right-nav a:hover {
 
 .signup_form {
 
+  width:40%;
+  height:325px;
+  float:right;
+  display:table-cell;
+  vertical-align:middle;
+  margin-right:40px;
+
+}
+
+.signin_form {
   height:325px;
   width:40%;
   float:left;
   display:table-cell;
   vertical-align:middle;
   margin-left:40px;
-
+  
+  
 }
 
 .form-control, .signin-form-control {
@@ -197,15 +208,7 @@ nav .right-nav a:hover {
 .signin_button:hover {
   background-color:#3DAABD;
 }
-.signin_form {
-  width:40%;
-  height:325px;
-  float:right;
-  display:table-cell;
-  vertical-align:middle;
-  margin-right:40px;
-  
-}
+
 
 
 /****** OVERRIDING PLACEHOLDER TEXT COLOR *****/
@@ -370,9 +373,10 @@ nav .right-nav a:hover {
 
 /******* Media Query     *********/
 @media screen and (max-width:640px) {
+
+
   #sign_up_form {
-    padding-top:40px;
-    background-color: #222429;
+    padding-top:0px;
     height:100%;
     width:600px;
     display:block;
@@ -383,6 +387,7 @@ nav .right-nav a:hover {
     width:50%;
     margin-left:10%;
     display:block;
+    margin-top:0px;
   }
 
 
