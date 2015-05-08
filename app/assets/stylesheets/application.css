@@ -368,4 +368,54 @@ nav .right-nav a:hover {
   color:#E04186;
 }
 
+/******* Media Query     *********/
+@media screen and (max-width:640px) {
+  #sign_up_form {
+    padding-top:40px;
+    background-color: #222429;
+    height:100%;
+    width:600px;
+    display:block;
+
+  }
+
+  .join_us, .sign_in_header {
+    width:50%;
+    margin-left:10%;
+    display:block;
+  }
+
+
+  .signup_form {
+
+    float:none;
+    display:table-cell;
+    vertical-align:middle;
+    width:50%;
+    margin-left:5%;
+
+  }
+
+  .form-control, .signin-form-control {
+      width:50%;
+      margin-left:10%;
+    }
+
+
+
+  .signup_button, .signin_button {
+    width: 50%;
+    margin-left:10%;
+    height:40px;
+
+  }
+
+  .signin_form {
+    width:40%;
+    float:none;
+    margin-right:40px;
+    
+  }
+}
+
 
